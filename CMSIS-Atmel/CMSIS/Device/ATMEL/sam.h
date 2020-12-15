@@ -319,6 +319,24 @@
  * ----------------------------------------------------------------------------
  */
 
+/* SAME53 series */
+#define SAME53J1 ( \
+    part_is_defined( SAME53J18A ) ) || \
+    part_is_defined( SAME53J19A ) )
+
+#define SAME53J2 ( \
+    part_is_defined( SAME53J20A ) )
+
+#define SAME53N1 ( \
+    part_is_defined( SAME53N19A ) )
+
+#define SAME53N2 ( \
+    part_is_defined( SAMEE53N20A ) )
+
+/* Entire SAME53 series */
+#define SAME70_SERIES (SAME53J1 || SAME53J2 || SAME53N1 || SAME53N2)
+
+
 /* SAME70 series */
 #define SAME70N1 ( \
     part_is_defined( SAME70N19 ) )
@@ -345,7 +363,7 @@
 #define SAME70_SERIES (SAME70N1 || SAME70N2 || SAME70J1 || SAME70J2 || SAME70Q1 || SAME70Q2)
 
 /* Entire SAME family */
-#define SAME_SERIES (SAME70_SERIES)
+#define SAME_SERIES (SAME53_SERIES || SAME70_SERIES)
 
 /*
  * ----------------------------------------------------------------------------
